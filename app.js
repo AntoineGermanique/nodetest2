@@ -7,7 +7,8 @@ var bodyParser = require('body-parser');
 // Database
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk(MONGODB_URI);
+var mongoUri = process.env.MONGODB_URI || 'localhost:27017/nodetest2'
+var db = monk(mongoUri);
 //cors
 var cors = require('cors')
 
